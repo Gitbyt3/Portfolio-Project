@@ -24,7 +24,8 @@ function App() {
   const station6_colour = "stroke-yellow-500"
 
   return (
-    <svg viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" className="w-screen h-screen">
+    <svg viewBox="0 0 1000 900" preserveAspectRatio="xMidYMid meet" className="w-screen h-screen">
+    {/* <svg viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" className="w-screen h-screen"> */}
       
       {/* Station 1 */}
       <Line route={station1_route} colour={station1_colour}/>
