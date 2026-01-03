@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './tailwind.css'
 import Station from "./Components/Station"
 import Intersection from "./Components/Intersection"
@@ -23,36 +23,52 @@ function App() {
   const station6_route = "M 950 670 V 550 A 15 15 0 0 0 940 540 H 880 A 15 15 0 0 1 870 530 V 450 A 15 15 0 0 0 860 440 H 820 A 15 15 0 0 0 810 450 V 570 A 15 15 0 0 1 800 580 H 750 A 15 15 0 0 0 740 590 V 650 A 15 15 0 0 0 750 660 H 790 A 15 15 0 0 1 800 670 V 740 A 15 15 0 0 1 790 750 H 700 A 15 15 0 0 1 690 740 V 600 A 15 15 0 0 0 680 590 H 600 A 15 15 0 0 1 590 580 V 500 A 15 15 0 0 0 580 490 H 520 A 15 15 0 0 1 510 480 V 400"
   const station6_colour = "stroke-yellow-500"
 
+  const isLightsOn = 0
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+ 
+  useEffect(() => {
+    const updateMousePosition = (e) => {setMousePosition({ x: e.clientX, y: e.clientY })}
+    window.addEventListener('mousemove', updateMousePosition)
+    return () => {window.removeEventListener('mousemove', updateMousePosition)}
+    }, [])
+
   return (
-    <svg viewBox="0 0 1000 900" preserveAspectRatio="xMidYMid meet" className="w-screen h-screen">
-    {/* <svg viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet" className="w-screen h-screen"> */}
-      
-      {/* Station 1 */}
-      <Line route={station1_route} colour={station1_colour}/>
-      <Station x="-20" y="600" colour={station1_colour}/>
+    <div>
+      <svg viewBox="-250 0 1500 900" preserveAspectRatio="xMidYMid meet" className="w-screen h-screen">
+        
+        {/* Station 1 */}
+        <Line route={station1_route} colour={station1_colour}/>
+        <Station x="-20" y="600" colour={station1_colour}/>
 
-      {/* Station 2 */}
-      <Line route={station2_route} colour={station2_colour}/>
-      <Station x="-50" y="100" colour={station2_colour}/>
+        {/* Station 2 */}
+        <Line route={station2_route} colour={station2_colour}/>
+        <Station x="-50" y="100" colour={station2_colour}/>
 
-      {/* Station 3 */}
-      <Line route={station3_route} colour={station3_colour}/>
-      <Station x="1100" y="500" colour={station3_colour}/>
+        {/* Station 3 */}
+        <Line route={station3_route} colour={station3_colour}/>
+        <Station x="1100" y="500" colour={station3_colour}/>
 
-      {/* Station 4 */}
-      <Line route={station4_route} colour={station4_colour}/>
-      <Station x="750" y="200" colour={station4_colour}/>
-      
-      {/* Station 5 */}
-      <Line route={station5_route} colour={station5_colour}/>
-      <Station x="600" y="700" colour={station5_colour}/>
-      
-      {/* Station 6 */}
-      <Line route={station6_route} colour={station6_colour}/>
-      <Station x="950" y="670" colour={station6_colour}/>
+        {/* Station 4 */}
+        <Line route={station4_route} colour={station4_colour}/>
+        <Station x="750" y="200" colour={station4_colour}/>
+        
+        {/* Station 5 */}
+        <Line route={station5_route} colour={station5_colour}/>
+        <Station x="600" y="700" colour={station5_colour}/>
+        
+        {/* Station 6 */}
+        <Line route={station6_route} colour={station6_colour}/>
+        <Station x="950" y="670" colour={station6_colour}/>
 
-      <Intersection x="500" y="400"/>
-    </svg>
+        {/* Intersection */}
+        <Intersection x="500" y="400"/>
+      </svg>
+      <div
+        className="pointer-events-none fixed inset-0 z-20 w-screen h-screen transition-opacity duration-500"
+        style={{ opacity: isLightsOn ? 0 : 1, background: `radial-gradient(circle 250px at ${mousePosition.x}px ${mousePosition.y}px, transparent 0%, rgba(0, 0, 0, 0.98) 100%)` }}
+      />
+    </div>
   )
 }
 
