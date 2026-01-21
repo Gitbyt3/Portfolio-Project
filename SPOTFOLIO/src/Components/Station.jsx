@@ -1,6 +1,10 @@
-function Station(details) {
+function Station({ x, y, colour, onClick }) {
     return (
-        <circle cx={details.x} cy={details.y} r="7" className={`fill-white ${details.colour} stroke-4`}/>
+        <circle 
+            cx={x} cy={y} r="7"
+            className={`fill-white ${colour} stroke-4`}
+            onClick={onClick}
+        />
     )
 }
 
