@@ -4,32 +4,18 @@ const ProjectPopUp = ({ station, onClose }) => {
   if (!station) return null;
 
   return (
-    <div 
-      className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-md animate-in fade-in duration-300" 
-      onClick={onClose}
-    >
-      <div 
-        className="bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl max-h-fit h-full max-w-fit w-full p-8 relative animate-in zoom-in duration-300 overflow-hidden" 
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button 
-          onClick={onClose} 
-          className="absolute top-4 right-4 text-zinc-500 hover:text-white transition-colors z-10 bg-zinc-900/50 rounded-full p-1"
-        >
+    <div className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-md" onClick={onClose}>
+      <div className="bg-zinc-900 border border-white/10 rounded-2xl p-8 relative" onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute top-2 right-2 z-10 text-zinc-500 hover:text-white">
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <path strokeLinecap="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
-        <div className={`w-16 h-1 mb-6 rounded-full ${station.colour}`} />
-
+        {/* Adjust so that whole popup matches width of image */}
         {station.image && (
-          <div className="mb-6 rounded-lg overflow-hidden border border-white/5 shadow-inner bg-zinc-800">
-            <img 
-              src={station.image} 
-              alt={station.title} 
-              className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
-            />
+          <div className="mb-6 rounded-lg overflow-hidden">
+            <img src={station.image} alt={station.title} className="max-w-[60%] h-auto mx-auto object-cover" />
           </div>
         )}
         
