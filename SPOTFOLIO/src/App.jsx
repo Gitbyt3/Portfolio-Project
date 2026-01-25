@@ -6,7 +6,7 @@ import Line from "./Components/Line"
 import ProjectPopUp from './Components/ProjectPopUp'
 import StationTracker from './Components/StationTracker'
 import RevealMap from './Components/RevealMap'
-import { stations } from './Components/StationsData'
+import { stations } from './Data/StationsData'
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
