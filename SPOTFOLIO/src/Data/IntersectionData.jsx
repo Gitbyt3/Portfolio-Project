@@ -1,4 +1,7 @@
 export const intersection = {
+    id: 0,
+    x: "500",
+    y: "400",
     "name": "Lucas Ong",
     "title": "QA Engineer | Data Scientist",
     "image": "../../profile_pic.jpg",
