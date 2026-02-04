@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div>
-      <svg ref={svgRef} viewBox="-250 0 1500 900" preserveAspectRatio="xMidYMid meet" className="w-screen h-screen">
+      <svg ref={svgRef} viewBox="-250 0 1500 900" preserveAspectRatio="none" className="w-screen h-screen block">
         <defs>
           <mask id="flashlight-mask">
             <rect x="-500" y="-100" width="2000" height="1200" fill="white" />
