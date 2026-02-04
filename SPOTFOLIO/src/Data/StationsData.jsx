@@ -57,21 +57,26 @@ export const stations =
     },
     { 
       id: 5,
-      title: "",
-      objective: "",
-      description: "",
-      image:"",
-      githubLink:"",
+      title: "Clustering Film Music Tracks for Emotion Retrieval (Dissertation)",
+      objective: "Cluster film music tracks according to musical features for emotion-based retrieval",
+      description: `
+        - Emotion, represented by Arousal-Valence, was projected onto the same latent space as the musical features
+        - Custom neural network architecture (VaDE + Contrastive Learning) used to retried tracks from this latent space
+        - Deployed as interactive retrieval system with React + Flask, enabling real-time queries`,
+      image:"../../project_5.png",
+      githubLink:"https://github.com/Gitbyt3/Music-Clustering-App",
       x: "600", y: "700", colour: "stroke-blue-700",
       route: "M 600 700 H 500 A 15 15 0 0 0 490 710 V 750 A 15 15 0 0 1 480 760 H 400 A 15 15 0 0 1 390 750 V 740 A 15 15 0 0 0 380 730 H 300 A 15 15 0 0 0 290 740 V 770 A 15 15 0 0 1 280 780 H 150 A 15 15 0 0 1 140 770 V 530 A 15 15 0 0 1 150 520 H 230 A 15 15 0 0 1 240 530 V 640 A 15 15 0 0 0 250 650 H 300 A 15 15 0 0 0 310 640 V 600 A 15 15 0 0 1 320 590 H 360 A 15 15 0 0 0 370 580 V 540 A 15 15 0 0 1 380 530 H 450 A 15 15 0 0 1 460 540 V 620 A 15 15 0 0 0 470 630 H 485 A 15 15 0 0 0 495 620 V 400"
     },
     { 
       id: 6,
-      title: "",
-      objective: "",
-      description: "",
-      image:"",
-      githubLink:"",
+      title: "Job Scraper - Scrappy",
+      objective: "Scrape job listings automatically from LinkedIn, Glassdoor, and Indeed",
+      description: `
+        - Selenium was used to create an invisible browser and navigate through pages
+        - Jobs were exported to a Google Sheet including metadata such as date posted and experience level`,
+      image:"../../project_6.jpeg",
+      githubLink:"https://github.com/Gitbyt3/Job-Scraper-Scrappy",
       x: "950", y: "670", colour: "stroke-yellow-500",
       route: "M 950 670 V 550 A 15 15 0 0 0 940 540 H 880 A 15 15 0 0 1 870 530 V 450 A 15 15 0 0 0 860 440 H 820 A 15 15 0 0 0 810 450 V 570 A 15 15 0 0 1 800 580 H 750 A 15 15 0 0 0 740 590 V 650 A 15 15 0 0 0 750 660 H 790 A 15 15 0 0 1 800 670 V 740 A 15 15 0 0 1 790 750 H 700 A 15 15 0 0 1 690 740 V 600 A 15 15 0 0 0 680 590 H 600 A 15 15 0 0 1 590 580 V 500 A 15 15 0 0 0 580 490 H 520 A 15 15 0 0 1 510 480 V 400"
     },
