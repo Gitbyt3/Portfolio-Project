@@ -65,10 +65,10 @@ function App() {
 
   return (
     <div>
-      <svg ref={svgRef} viewBox={viewBox} preserveAspectRatio="xMidYMid meet" className="w-screen h-screen block">
+      <svg ref={svgRef} viewBox={viewBox} preserveAspectRatio="xMidYMid slice" className="w-screen h-screen block">
         <defs>
           <mask id="flashlight-mask">
-            <rect x="-500" y="-100" width="2000" height="1200" fill="white" />
+            <rect x="-5000" y="-5000" width="10000" height="10000" fill="white" />
             <circle cx={mousePosition.x} cy={mousePosition.y} r="150" fill="black" style={{ filter: 'blur(40px)' }} />
             {[...clickedStations].map(id => {
               const station = id == intersection.id ? intersection : stations.find(s => s.id == id)
