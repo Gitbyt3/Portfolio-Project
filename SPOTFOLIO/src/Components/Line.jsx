@@ -1,6 +1,6 @@
 function Line({ route, colour }) {
     return (
-        <path d={route} fill="none" className={`${colour} stroke-5`}/>
+        <path d={route} fill="none" stroke={colour} strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
     )
 }
 

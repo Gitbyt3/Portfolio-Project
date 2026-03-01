@@ -15,7 +15,7 @@ function App() {
   const [selectedStation, setSelectedStation] = useState(null)
   const [isRevealed, setIsRevealed] = useState(false)
   const svgRef = useRef(null)
-  const allFound = clickedStations.size == stations.length + 1
+  const allFound = true
   const handleStationClick = (station) => {
     setClickedStations((prev) => new Set(prev).add(station.id))
     setSelectedStation(station)
@@ -83,7 +83,7 @@ function App() {
           {stations.map(s => (
             <g key={s.id}>
               <Line route={s.route} colour={s.colour} />
-              <Station x={s.x} y={s.y} colour={s.colour} onClick={() => handleStationClick(s)} />
+              <Station x={s.x} y={s.y} colour={s.colour} onClick={() => handleStationClick(s)} isSelected={selectedStation?.id == s.id} isFound={clickedStations.has(s.id)} />
             </g>  ))}
           <Intersection x={intersection.x} y={intersection.y} onClick={() => handleStationClick(intersection)} />
         </g>
